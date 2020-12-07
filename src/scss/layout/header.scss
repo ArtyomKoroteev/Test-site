@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 34px 55px;
+
+  @include media ('<tablet') {
+    padding: 20px;
+  }
+
+  &-logo {
+    display: block;
+    width: 83px;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    transform: translateY(-3px);
+  }
+}

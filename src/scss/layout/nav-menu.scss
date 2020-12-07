@@ -1,0 +1,62 @@
+.nav-menu {
+  .menu {
+    @extend %listreset;
+    display: flex;
+    height: 100%;
+
+    @include media ('<tablet-lg') {
+      display: none;
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-right: 59px;
+      text-transform: uppercase;
+    }
+
+    .sub-menu-opener {
+      position: absolute;
+      right: -17px;
+      top: 50%;
+      display: inline-flex;
+      align-items: center;
+      transform: translateY(-50%);
+      padding: 0;
+      border: none;
+      background: transparent;
+      outline: none;
+
+      .icon-rectangle {
+        display: flex;
+        color: var(--color-yellow);
+        pointer-events: none;
+
+        &:before {
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 4px 0 4px;
+          border-color: var(--color-yellow) transparent transparent transparent;
+        }
+      }
+    }
+
+    a {
+      color: var(--menu-text-color);
+      text-decoration: none;
+
+      &:hover {
+        @include animate(color);
+        color: var(--color-yellow);
+      }
+    }
+  }
+}
+
+.sub-menu {
+  @extend %listreset;
+  display: none;
+}

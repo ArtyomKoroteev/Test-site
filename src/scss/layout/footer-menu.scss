@@ -1,0 +1,34 @@
+.footer-menu {
+  margin-left: 5px;
+
+  @include media ('<tablet-lg') {
+    margin: 0 0 30px;
+  }
+
+  .menu {
+    @extend %listreset;
+    display: flex;
+
+    @include media ('<tablet') {
+      display: inline;
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-right: 59px;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: var(--menu-text-color);
+      text-decoration: none;
+
+      &:hover {
+        @include animate(color);
+        color: var(--color-yellow);
+      }
+    }
+  }
+}
