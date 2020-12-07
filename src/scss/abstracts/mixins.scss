@@ -217,6 +217,10 @@ $animation-speed: 0.3s !default;
   }
 }
 
+@mixin background-svg($svg){
+  background-image: svg-url($svg);
+}
+
 
 /// Mixin for styling form-placeholders
 /// @example @include placeholder { color: red; }

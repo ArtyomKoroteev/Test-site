@@ -1,0 +1,121 @@
+.latest-posts-section {
+  padding: 55px;
+}
+
+.post {
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -15px;
+  }
+
+  &-card {
+    display: flex;
+    flex: 0 0 33.33%;
+    width: 100%;
+    max-width: 33.33%;
+    margin-bottom: 35px;
+    padding: 0 15px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      .post-card-image-holder {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      .read-more {
+        .text:before {
+          transform: translate(5px, -50%);
+        }
+      }
+    }
+
+    &-holder {
+      display: flex;
+      box-shadow: 0 0 7.6px 0.4px rgba(17, 20, 48, 0.11);
+    }
+
+    &-image-holder,
+    &-text-holder {
+     width: 50%;
+    }
+
+    &-image-holder {
+      position: relative;
+      padding: 50% 0 0;
+      overflow: hidden;
+
+      picture {
+        display: flex;
+      }
+
+      img {
+        @include animate(transform);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-text-holder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 18px 15px 10px 20px;
+      color: var(--color-dark-grey);
+
+      .category {
+        display: block;
+        font-size: 12px;
+        line-height: 1.67;
+        letter-spacing: -0.12px;
+        text-transform: uppercase;
+        color: var(--color-tiny-grey);
+        margin-bottom: 10px;
+      }
+
+      .title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        height: 80px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: -0.16px;
+        font-weight: 400;
+      }
+
+      .read-more {
+
+        .text {
+          position: relative;
+          display: inline-flex;
+          justify-content: flex-start;
+          padding-right: 20px;
+          font-size: 12px;
+
+          &:before {
+            @include animate(transform);
+            @include background-svg('<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.83 59.72"><path d="M65.49 31.1a2.4 2.4 0 00.15-.27c0-.06 0-.13.06-.19s.06-.18.08-.28a2.56 2.56 0 00.05-.49v-.06a2.47 2.47 0 000-.44 2.29 2.29 0 00-.11-.37v-.09a2.5 2.5 0 00-.21-.4 2.53 2.53 0 00-.32-.39L37.74.73a2.5 2.5 0 10-3.53 3.53l23.09 23.1H2.5a2.5 2.5 0 000 5h54.8l-23.1 23.1A2.5 2.5 0 0037.74 59L65.1 31.63l.06-.07a2.47 2.47 0 00.25-.3z"/></svg>');
+            content: '';
+            background-size: cover;
+            background-repeat: round;
+            height: 9px;
+            width: 13px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}
