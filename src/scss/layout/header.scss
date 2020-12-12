@@ -1,7 +1,12 @@
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
   padding: 34px 55px;
+  background: var(--color-white);
+  box-shadow: 0 0 32px rgba(174, 174, 174, 0.15);
 
   @include media ('<tablet') {
     padding: 20px;
